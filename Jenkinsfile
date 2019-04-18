@@ -56,6 +56,13 @@ pipeline {
         }
       }
     }
+    stage('Unit test') {
+      steps {
+        container('go') {
+          sh "Call a utest here"
+        }
+      }
+    }
     stage('Promote to Environments') {
       when {
         branch 'master'
